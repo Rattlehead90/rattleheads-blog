@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className="h-20 p-2">
       <div className="flex justify-between max-w-screen-md mx-auto">
         <div className="max-w-3xl flex flex-col">
-          <h2 className="font-extrabold text-4xl">Rattlehead's Blog</h2>
+          <h2 className="font-extrabold sm:text-4xl text-2xl">Rattlehead's Blog</h2>
           <div className="flex gap-4">
             <Link href="/">Home</Link>
             <Link href="/">Posts</Link>
