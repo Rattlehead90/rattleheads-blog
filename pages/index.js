@@ -1,13 +1,19 @@
 import Head from 'next/head'
 import { Heebo } from 'next/font/google'
 import Navbar from '@/components/Navbar'
+import { createContext, useState } from 'react'
 
 const heebo = Heebo({
   weight: ["400", "600"],
   subsets: ["latin"]
 })
 
+export const DarkContext = createContext();
+
 export default function Home() {
+
+  const [dark, setDark] = useState("");
+  
   return (
     <>
       <Head>
@@ -16,10 +22,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${heebo.className} h-screen`}>
-        <Navbar />
-        <h1>Hello world</h1>
-      </main>
+      <DarkContext.Provider value={setDark}>
+        <main className={`${heebo.className} h-screen ${dark}`}>
+          <div className="h-screen dark:bg-black dark:text-white">
+            <Navbar />
+            <h1>Hello world</h1>
+          </div>
+        </main>
+      </DarkContext.Provider>
     </>
-  )
+  );
 }
