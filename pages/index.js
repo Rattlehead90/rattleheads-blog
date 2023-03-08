@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
       <DarkContext.Provider value={setDark}>
         <main className={`${heebo.className} h-screen ${dark}`}>
-          <div className="h-screen dark:bg-black dark:text-white">
+          <div className="h-screen dark:bg-black dark:text-white transition-colors">
             <Navbar />
             <h1>Hello world</h1>
           </div>

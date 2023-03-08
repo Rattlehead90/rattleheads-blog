@@ -7,7 +7,7 @@ import { Transition } from "@headlessui/react";
 export default function Navbar() {
   
   return(
-    <div className="h-fit p-2 pt-16 dark:bg-black dark:text-white">
+    <div className="h-fit p-2 pt-16 dark:bg-black dark:text-white transition-colors">
       <div className="flex justify-between max-w-screen-md mx-auto">
         <div className="max-w-3xl flex flex-col">
           <h2 className="font-extrabold sm:text-4xl text-2xl">Rattlehead's Blog</h2>
@@ -33,12 +33,12 @@ function ThemeButton() {
   const setDark = useContext(DarkContext);
 
 
-  return <Link href="#" onClick={() => setDark((s) => s === "dark" ? "" : "dark")}>
+  return <Link href="/" onClick={() => setDark((s) => s === "dark" ? "" : "dark")}>
     <Image
       src="./icons/bright.svg"
       width={32}
       height={32}
-      className="dark:invert"
+      className="dark:invert transition-colors"
       alt="change theme" />
   </Link>;
 }
@@ -48,14 +48,15 @@ function DropDown(props) {
 
   return (
     <div className="flex items-center">
-      <Link href="#" onClick={() => setOpen(!open)}>
+      <Link href="/" onClick={() => setOpen(!open)}>
         <Image
           src="./icons/caret.svg"
-          className="dark:invert"
+          className="dark:invert transition-colors"
           width={42}
           height={42}
           alt="dropdown arrow"
        />
+       
       </Link>
 
       <Transition
@@ -76,7 +77,7 @@ function DropDown(props) {
 function Menu() {
   function MenuItem(props) {
     return (
-      <Link href={props.linkPage} className="h-12 flex items-center justify-start gap-3 hover:bg-gray-100 dark:hover:bg-gray-900 p-2 rounded-md transition-all dark:text-white">
+      <Link href={props.linkPage} className="h-12 flex items-center justify-start gap-3 hover:bg-gray-100 dark:hover:bg-gray-900 p-2 rounded-md transition-all dark:text-white transition-colors">
         <span>{props.icon}</span>
         {props.children}
         <span className="ml-auto">{props.arrow}</span>
@@ -85,13 +86,13 @@ function Menu() {
   }
 
   return (
-    <div className="absolute border-gray-500 border-2 rounded-md p-4 top-[110px] shadow-lg w-56 -translate-x-56 overflow-hidden bg-white dark:bg-black">
+    <div className="absolute border-gray-500 border-2 rounded-md p-4 top-[110px] shadow-lg w-56 -translate-x-56 overflow-hidden bg-white dark:bg-black dark:shadow-white dark:shadow-sm transition-colors">
       <MenuItem 
         icon= {
           <Image
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
             width={32}
-            className="dark:invert"
+            className="dark:invert transition-colors"
             height={32}
             alt="github logo"
           />
@@ -105,7 +106,7 @@ function Menu() {
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg"
                 width={32}
                 height={32}
-                className="dark:invert"
+                className="dark:invert transition-colors"
                 alt="github logo"
               />}
         linkPage="https://www.linkedin.com/in/vadim-strogonov-3040b4169/"
