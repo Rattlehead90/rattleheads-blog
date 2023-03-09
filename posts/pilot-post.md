@@ -1,6 +1,6 @@
 ---
 title: What to Expect from the Dull
-date: 2023-03-08
+date: "08.03.2023"
 ---
 
 # What to Expect from the Dull

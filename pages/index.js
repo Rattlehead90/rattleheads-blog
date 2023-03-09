@@ -1,19 +1,20 @@
-import Head from 'next/head'
-import { Heebo } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-import { createContext, useState } from 'react'
+import Head from "next/head";
+import { getSortedPostsData } from "@/lib/posts";
+import Layout from "@/components/Layout";
 
-const heebo = Heebo({
-  weight: ["400", "600"],
-  subsets: ["latin"]
-})
 
-export const DarkContext = createContext();
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
 
-export default function Home() {
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
 
-  const [dark, setDark] = useState("");
-  
+export default function Home({ allPostsData }) {
+
   return (
     <>
       <Head>
@@ -22,14 +23,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DarkContext.Provider value={setDark}>
-        <main className={`${heebo.className} h-screen ${dark}`}>
-          <div className="h-screen dark:bg-black dark:text-white transition-colors">
-            <Navbar />
-            <h1>Hello world</h1>
-          </div>
-        </main>
-      </DarkContext.Provider>
+      <Layout>
+        <ul className="sm:grid sm:grid-cols-2 flex flex-col gap-4 items-center">
+          {allPostsData.map(({ id, title, date }) => (
+            <li key={id} className="rounded-md flex p-2 flex-col w-80">
+              <h2 className="font-bold ">{title}</h2>
+
+              <div className="text-sm italic">{id}</div>
+
+              <div className="text-sm">{date}</div>
+            </li>
+          ))}
+        </ul>
+      </Layout>
     </>
   );
 }

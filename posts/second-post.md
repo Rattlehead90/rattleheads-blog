@@ -1,6 +1,6 @@
 ---
 title: "Jazz is for the Jizzed"
-date: 2023-03-07
+date: "09.03.2023"
 ---
 
 # Jazz is for the Jizzed
