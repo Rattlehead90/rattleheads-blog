@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="flex justify-between max-w-screen-md mx-auto">
         <div className="max-w-3xl flex flex-col">
           <Link className="font-extrabold sm:text-4xl text-2xl" href={"/"}>
-            Rattlehead's Blog
+            {'Rattlehead\'s Blog'}
           </Link>
           <div className="flex gap-4">
             <Link href="/">Home</Link>
