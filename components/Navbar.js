@@ -10,7 +10,9 @@ export default function Navbar() {
     <div className="h-fit p-2 pt-16 dark:bg-black dark:text-white transition-colors">
       <div className="flex justify-between max-w-screen-md mx-auto">
         <div className="max-w-3xl flex flex-col">
-          <h2 className="font-extrabold sm:text-4xl text-2xl">Rattlehead's Blog</h2>
+          <Link className="font-extrabold sm:text-4xl text-2xl" href={"/"}>
+            Rattlehead's Blog
+          </Link>
           <div className="flex gap-4">
             <Link href="/">Home</Link>
             <Link href="/">Posts</Link>

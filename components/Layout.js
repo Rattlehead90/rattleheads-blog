@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { Heebo } from "next/font/google";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const heebo = Heebo({
   weight: ["400", "600"],

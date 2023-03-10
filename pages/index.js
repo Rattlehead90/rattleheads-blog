@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { getSortedPostsData } from "@/lib/posts";
 import Layout from "@/components/Layout";
+import Link from "next/link";
 
 
 export async function getStaticProps() {
@@ -26,12 +27,12 @@ export default function Home({ allPostsData }) {
       <Layout>
         <ul className="sm:grid sm:grid-cols-2 flex flex-col gap-4 items-center">
           {allPostsData.map(({ id, title, date }) => (
-            <li key={id} className="rounded-md flex p-2 flex-col w-80">
-              <h2 className="font-bold ">{title}</h2>
-
-              <div className="text-sm italic">{id}</div>
-
-              <div className="text-sm">{date}</div>
+            <li key={id} className="rounded-md flex py-2 flex-col w-80">
+              <Link href={`./posts/${id}`}>
+                <h2 className="font-bold ">{title}</h2>
+                <div className="text-sm italic">{id}</div>
+                <div className="text-sm">{date}</div>
+              </Link>
             </li>
           ))}
         </ul>
