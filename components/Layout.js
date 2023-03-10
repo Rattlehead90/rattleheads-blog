@@ -15,8 +15,8 @@ export default function Layout({ children }) {
 
   return (
     <DarkContext.Provider value={setDark}>
-      <main className={`${heebo.className} h-screen ${dark} px-4 sm:p-0`}>
-        <div className="h-screen dark:bg-black dark:text-white transition-colors">
+      <main className={`${heebo.className} ${dark} h-screen sm:p-0`}>
+        <div className="dark:bg-black dark:text-white h-full transition-colors px-8 pb-16">
           <Navbar />
           <section className="max-w-screen-md mx-auto sm:mt-24 mt-8">
             {children}

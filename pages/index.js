@@ -23,7 +23,7 @@ export default function Home({ allPostsData }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ul className="sm:grid sm:grid-cols-2 flex flex-col gap-4 items-center">
+      <ul className="sm:grid sm:grid-cols-2 flex flex-col gap-4 items-start">
         {allPostsData.map(({ id, title, date }) => (
           <li key={id} className="rounded-md flex py-2 flex-col w-80">
             <Link href={`./posts/${id}`}>
