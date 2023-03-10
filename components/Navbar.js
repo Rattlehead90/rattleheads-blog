@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useContext, useState } from "react";
-import { DarkContext } from "./Layout";
+import { useState } from "react";
+import { useTheme } from "next-themes"
 import { Transition } from "@headlessui/react";
 
 export default function Navbar() {
@@ -32,10 +32,9 @@ export default function Navbar() {
 
 function ThemeButton() {
 
-  const setDark = useContext(DarkContext);
+  const {theme, setTheme } = useTheme();
 
-
-  return <Link href="#" onClick={() => setDark((s) => s === "dark" ? "" : "dark")}>
+  return <Link href="#" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
     <Image
       src="../icons/bright.svg"
       width={32}
