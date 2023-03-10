@@ -25,7 +25,7 @@ export default function Post({postData}) {
         <title>{postData.title}</title>
       </Head>
       <h1 className="font-bold text-3xl mb-8">{postData.title}</h1>
-      <div className="sm:text-xl" dangerouslySetInnerHTML={{__html: postData.contentHtml }}/>
+      <div className="sm:text-xl pb-36" dangerouslySetInnerHTML={{__html: postData.contentHtml }}/>
     </>
   );
 }
