@@ -7,3 +7,43 @@
     @apply flex items-center hover:invert transition-all ml-4 p-0;
   }
 }
+
+@layer base {
+
+  :root {
+    --highlight: #F26430;
+    --italic: #274690;
+    --crossed: gray;
+  }
+
+  div h1 {
+    font-size: larger;
+    font-weight: 600;
+    margin: 2.5rem 0 2rem 0;
+  }
+
+  div h2 {
+    font-size: large;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem 0;
+  }
+
+  div h3 {
+    font-size: medium;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+  }
+
+  
+  p {
+    line-height: 133%;
+  }
+
+  del {
+    color: var(--crossed);
+  }
+
+  strong {
+    color: var(--highlight);
+  }
+}
